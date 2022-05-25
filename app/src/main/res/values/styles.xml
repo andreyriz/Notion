@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/apk/res-auto">
+
+    <style name="CustomToolBar">
+        <item name="android:elevation" ns1:ignore="NewApi">@dimen/design_appbar_elevation</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextColor">@android:color/black</item>
+        <item name="subtitleTextColor">@android:color/black</item>
+        <!-- Note: this theme overlay will only work if the style is applied directly to a Toolbar. -->
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Toolbar.Primary</item>
+        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Toolbar.Popup.Primary</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialComponents.Toolbar.Primary" parent="">
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="actionMenuTextColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialComponents.Toolbar.Popup.Primary" parent="">
+        <item name="colorControlNormal">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.App.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TabLayout</item>
+
+    </style>
+
+    <style name="ThemeOverlay.App.TabLayout" parent="">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorSurface">#BDAD9A</item>
+        <item name="colorOnSurface">@color/black</item>
+    </style>
+
+    <style name="CustomInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/main_back_color</item>
+    </style>
+</resources>

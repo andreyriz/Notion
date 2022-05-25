@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="design_appbar_elevation">5dp</dimen>
+
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="placeholderImageWidth">100dp</dimen>
+    <dimen name="placeholderImageHeight">150dp</dimen>
+    <dimen name="placeholderRadius">5dp</dimen>
+    <dimen name="placeholderTextHeight">8dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="design_snackbar_padding_vertical">0dp</dimen>
+    <dimen name="design_snackbar_padding_vertical_2lines">0dp</dimen>
+</resources>

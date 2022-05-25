@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">48dp</dimen>
+
+    <dimen name="design_snackbar_padding_vertical">0dp</dimen>
+    <dimen name="design_snackbar_padding_vertical_2lines">0dp</dimen>
+</resources>

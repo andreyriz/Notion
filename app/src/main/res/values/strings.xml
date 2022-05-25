@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Susie</string>
+    <string name="home">Главная</string>
+    <string name="personal">Личный кабинет</string>
+    <string name="auth">Войти</string>
+    <!-- Strings used for fragments for navigation -->
+</resources>
