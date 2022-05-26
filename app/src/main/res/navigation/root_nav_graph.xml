@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.andrey.notion.Fragments.Auth.AuthFragment"
+        android:name="com.andrey.susie.Fragments.Auth.AuthFragment"
         android:label="auth_fragment"
         tools:layout="@layout/auth_fragment">
 
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.andrey.notion.Fragments.Main.MainFragment"
+        android:name="com.andrey.susie.Fragments.Main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment"/>
 
