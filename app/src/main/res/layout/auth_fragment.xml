@@ -12,18 +12,13 @@
         style="@style/CustomInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="32dp"
-
         android:layout_marginEnd="32dp"
-
         android:drawablePadding="10dp"
-        android:hint="Email address"
+        android:hint="@string/hint_email"
         android:textColorHint="@color/main_back_color"
-
         app:boxStrokeColor="@color/main_back_color"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +41,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:drawablePadding="10dp"
-        android:hint="password"
+        android:hint="@string/hint_pass"
         android:textColorHint="@color/main_back_color"
         app:boxStrokeColor="@color/main_back_color"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +59,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/auth"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"

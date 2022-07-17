@@ -1,7 +1,14 @@
 package com.andrey.susie.Fragments.Main
 
-import androidx.lifecycle.ViewModel
+import com.andrey.susie.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor() : BaseViewModel<MainUIEvent, MainUIEffect>() {
     // TODO: Implement the ViewModel
+
+    override fun handleEvent(event: MainUIEvent) {
+        TODO("Not yet implemented")
+    }
 }

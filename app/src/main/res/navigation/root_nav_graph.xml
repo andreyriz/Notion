@@ -14,8 +14,6 @@
         <action
             android:id="@+id/action_authFragment_to_mainFragment"
             app:destination="@id/mainFragment"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true"
             />
 
     </fragment>
@@ -23,7 +21,6 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.andrey.susie.Fragments.Main.MainFragment"
-        android:label="main_fragment"
         tools:layout="@layout/main_fragment"/>
 
 </navigation>

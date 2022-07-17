@@ -3,5 +3,8 @@
     <string name="home">Главная</string>
     <string name="personal">Личный кабинет</string>
     <string name="auth">Войти</string>
+    <string name="hint_pass">Password</string>
+    <string name="hint_email">Email address</string>
+    <string name="error_text">Проверьте ваш логин или пароль</string>
     <!-- Strings used for fragments for navigation -->
 </resources>

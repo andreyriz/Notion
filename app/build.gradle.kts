@@ -39,7 +39,7 @@ android {
 
 dependencies {
     val nav_version = "2.3.5"
-    val material_version = "1.6.0-alpha01"
+    val material_version = "1.6.1"
     val lifecycle_version = "2.4.0"
     val paging_version = "3.1.0"
     val retrofit_version="2.9.0"
@@ -84,6 +84,7 @@ dependencies {
     implementation ("com.facebook.shimmer:shimmer:$shimmer_version")
     //Logger
     implementation ("com.jakewharton.timber:timber:$timber_version")
+    implementation ("com.google.android.material:material:$material_version")
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
