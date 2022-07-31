@@ -1,5 +1,6 @@
 package com.andrey.susie.Fragments.Auth
 
+import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Gravity
@@ -35,6 +36,12 @@ class AuthFragment : BaseFragment<AuthUIEvent, AuthUIEffect>(R.layout.auth_fragm
         binding.auth.setOnClickListener {
             viewModel.addEvent(AuthUIEvent.OnLogin("","",""))
         }
+
+        val isAuth = context?.getSharedPreferences("AuthorizationPreferences",Context.MODE_PRIVATE)?.getBoolean("IsAuth", false)
+        isAuth?.let {
+         if(it)
+            findNavController().navigate(AuthFragmentDirections.actionAuthFragmentToMainFragment())
+        }
     }
 
     override fun startSubscription() {
@@ -45,6 +52,7 @@ class AuthFragment : BaseFragment<AuthUIEvent, AuthUIEffect>(R.layout.auth_fragm
                     Timber.d(it.info)
 
                     if (it.info.contains("Confirm")) {
+                        context?.getSharedPreferences("AuthorizationPreferences",Context.MODE_PRIVATE)?.edit()?.putBoolean("IsAuth", true)?.apply()
                         findNavController().navigate(AuthFragmentDirections.actionAuthFragmentToMainFragment())
                     } else {
                         showError(it.info)

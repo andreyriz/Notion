@@ -2,6 +2,8 @@ package com.andrey.susie
 
 import com.andrey.susie.api.auth.AuthService
 import com.andrey.susie.api.auth.AuthServiceRepository
+import com.andrey.susie.api.auth.music.MusicService
+import com.andrey.susie.api.auth.music.MusicServiceRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,9 +38,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMainService(retrofit : Retrofit) : AuthService = retrofit.create(AuthService::class.java)
+    fun provideAuthService(retrofit : Retrofit) : AuthService = retrofit.create(AuthService::class.java)
 
     @Provides
     @Singleton
-    fun provideMainRemoteData(mainService : AuthService) : AuthServiceRepository = AuthServiceRepository(mainService)
+    fun provideAuthServiceRemoteData(authService : AuthService) : AuthServiceRepository = AuthServiceRepository(authService)
+
+
+    @Provides
+    @Singleton
+    fun provideMusicService(retrofit:Retrofit):MusicService = retrofit.create(MusicService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideMusicServiceRemoteData(musicService:MusicService) : MusicServiceRepository = MusicServiceRepository(musicService)
 }
