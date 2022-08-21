@@ -10,14 +10,35 @@
         android:name="com.andrey.susie.Fragments.Home.HomeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" >
+
         <action
-            android:id="@+id/action_homeFragment_to_playerFragment"
-            app:destination="@id/playerFragment" />
+            android:id="@+id/action_homeFragment_to_musicFragment"
+            app:destination="@id/musicFragment" >
+
+            <argument
+                android:name="music"
+                app:argType="com.andrey.susie.data.Music" />
+
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.andrey.susie.Fragments.Player.PlayerFragment"
         android:label="player_fragment"
-        tools:layout="@layout/player_fragment" />
+        tools:layout="@layout/player_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.andrey.susie.Fragments.Music.MusicFragment"
+        android:label="music_fragment"
+        tools:layout="@layout/music_fragment" >
+
+        <argument
+            android:name="music"
+            app:argType="com.andrey.susie.data.Music" />
+    </fragment>
+
 </navigation>

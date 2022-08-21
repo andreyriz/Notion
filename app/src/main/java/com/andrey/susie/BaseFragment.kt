@@ -11,6 +11,7 @@ import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 
 abstract class BaseFragment<Event : UIEvent, Effect : UIEffect>(
     @LayoutRes layoutRes: Int
@@ -27,6 +28,8 @@ abstract class BaseFragment<Event : UIEvent, Effect : UIEffect>(
             if (!onBackPressed()) {
                 isEnabled = false
                 activity?.onBackPressed()
+            }else{
+                findNavController().popBackStack()
             }
         }
     }

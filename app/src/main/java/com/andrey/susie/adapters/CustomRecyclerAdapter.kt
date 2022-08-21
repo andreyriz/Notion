@@ -14,7 +14,7 @@ import com.andrey.susie.data.Music
 import com.bumptech.glide.Glide
 import timber.log.Timber
 
-class HomeRecyclerViewAdapter(private val musics: List<Music>) :
+class HomeRecyclerViewAdapter(private val musics: List<Music>, private val onItemClicked: (Music) -> Unit) :
     PagingDataAdapter<Music, HomeRecyclerViewAdapter.HomeViewHolder>(object : DiffUtil.ItemCallback<Music>() {
         override fun areItemsTheSame(oldItem: Music, newItem: Music): Boolean =
             oldItem.id == newItem.id
@@ -34,30 +34,23 @@ class HomeRecyclerViewAdapter(private val musics: List<Music>) :
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
-        //holder.title.text = names[position]
         (holder as? HomeViewHolder)?.bind(holder, musics[position], position)
-        //holder.smallTextView.text = "кот"
     }
 
     override fun getItemCount() = musics.size
 
     inner class HomeViewHolder(private val binding: MusicCompositionItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val imgView: ImageView = itemView.findViewById(R.id.imgView)
-        val title: TextView = itemView.findViewById(R.id.title)
-        var iitem:Music? = null
+        private val imgView: ImageView = itemView.findViewById(R.id.imgView)
+        private val title: TextView = itemView.findViewById(R.id.title)
+        private var iitem:Music? = null
 
         fun bind(holder:HomeViewHolder, item:Music, position:Int){
             iitem = item
             title.text = item.music_name
             Glide.with(imgView).load(item.music_img).into(imgView)
 
-            holder.binding.content.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(view: View?) {
-                    Timber.d(musics[position].music_name)
-                }
-
-            })
+            holder.binding.content.setOnClickListener { onItemClicked.invoke(item) }
         }
     }
 }

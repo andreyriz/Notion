@@ -1,6 +1,5 @@
 package com.andrey.susie.Fragments.Home
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -10,7 +9,6 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.andrey.susie.BaseFragment
-import com.andrey.susie.Fragments.Auth.AuthFragmentDirections
 import com.andrey.susie.R
 import com.andrey.susie.adapters.HomeRecyclerViewAdapter
 import com.andrey.susie.data.Music
@@ -59,7 +57,9 @@ class HomeFragment : BaseFragment<HomeUIEvent, HomeUIEffect>(R.layout.home_fragm
                     binding.recyclerView.visibility = View.VISIBLE
                     binding.shimmerViewContainer.visibility = View.GONE
                     Timber.d(it.size.toString())
-                    homeAdapter = HomeRecyclerViewAdapter(it)
+                    homeAdapter = HomeRecyclerViewAdapter(it){
+                        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMusicFragment(it))
+                    }
                     binding.recyclerView.apply {
                         layoutManager = GridLayoutManager(context, 3)
                         setHasFixedSize(true)
@@ -68,22 +68,6 @@ class HomeFragment : BaseFragment<HomeUIEvent, HomeUIEffect>(R.layout.home_fragm
                 }
             }
         }
-    }
-
-    private fun fillList(): List<Music> {
-       return listOf(
-           Music(0,"AAAAAA","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(1,"BBBBBB","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(2,"CCCCCC","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(3,"DDDDDD","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(4,"EEEEEE","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(5,"FFFFFF","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(6,"GGGGGG","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(7,"SSSSSS","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(8,"KKKKKK","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(9,"LLLLLL","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg",""),
-           Music(10,"MMMMMM","https://musiclibrary-susie.herokuapp.com/static/musicimagesource/roket_monday.jpg","")
-           )
     }
 
 }
